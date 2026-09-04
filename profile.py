@@ -7,7 +7,7 @@ import geni.portal as portal
 import geni.rspec.pg as rspec
 
 portal.context.defineParameter("n", "Number of VMs", 
-                               portal.ParameterType.Interger, 1)
+                               portal.ParameterType.Integer, 1)
 
 params = portal.context.bindParameters()
 
