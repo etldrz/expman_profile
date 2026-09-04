@@ -27,4 +27,6 @@ for i in range(params.n):
         shell="bash", 
         command="/local/repository/setup.sh"))
 
+link = request.LAN("lan")
+
 portal.context.printRequestRSpec()
