@@ -11,7 +11,7 @@ portal.context.defineParameter("n", "Number of VMs",
 
 params = portal.context.bindParameters()
 
-request = portal.cntext.makeRequestRSpec()
+request = portal.context.makeRequestRSpec()
 
 if params.n < 1 or params.n > 8:
     portal.context.reportError(
