@@ -27,4 +27,4 @@ for i in range(params.n):
         shell="bash", 
         command="/local/repository/setup.sh"))
 
-portal.context.printRequestRSPec()
+portal.context.printRequestRSpec()
