@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-echo "here I am" >> ~/alive.txt
+echo "here I am" >> /tmp/outputtxt.txt

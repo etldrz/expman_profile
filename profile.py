@@ -4,29 +4,30 @@ in testing.
 """
 
 import geni.portal as portal
-import geni.rspec.pg as rspec
+import geni.rspec.pg as pg
 
-portal.context.defineParameter("n", "Number of VMs", 
-                               portal.ParameterType.INTEGER, 1)
+pc = portal.Context()
 
-params = portal.context.bindParameters()
+pc.defineParameter("n", "Number of nodes", 
+                   portal.ParameterType.INTEGER, 1)
 
-request = portal.context.makeRequestRSpec()
+params = pc.bindParameters()
+
+request = pc.makeRequestRSpec()
 
 if params.n < 1 or params.n > 8:
-    portal.context.reportError(
-            portal.ParameterError(
-                "Bad number of VMs; please choose between 1 and 8", ["n"]))
+    pc.reportError(portal.ParameterError(
+        "Bad number of nodes; please choose between 1 and 8", 
+        ["n"]))
 
-
-portal.context.verifyParameters()
+pc.verifyParameters()
 
 for i in range(params.n):
-    node = request.XenVM("node" + str(i))
-    node.addService(rspec.Execute(
-        shell="bash", 
-        command="/local/repository/setup.sh"))
+    node = request.RawPC("node" + str(i))
+    node.addService(
+            pg.Execute(shell="sh", 
+                       command="/local/repository/setup.sh"))
 
-link = request.LAN("lan")
+#link = request.LAN("lan")
 
-portal.context.printRequestRSpec()
+pc.printRequestRSpec(request)
