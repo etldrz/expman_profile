@@ -1,9 +1,12 @@
 #!/bin/bash
 
-#echo "This is going to make a file" >> "$HOME/test.tx"
+cd /local
+chown +x "${USER}:${GROUP}"
+echo "${USER}:${GROUP}" >> /local/here.txt
 
-#sudo curl https://mise.run | sh
-#sudo echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
+curl https://mise.run | sh
+echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
+eval "$(HOME/.local/bin/mise activate bash)"
 git clone https://github.com/etldrz/caring.git /local/expman
-#cd /local/expman
-#sudo mise install
+cd /local/expman
+sudo mise install

@@ -22,7 +22,6 @@ portal.context.verifyParameters()
 
 for i in range(params.n):
     node = request.RawPC("node" + str(i))
-    node.addService(pg.Install(url="https://mise.run", path="/local"))
     node.addService(pg.Execute(shell="bash", command="/local/repository/setup.sh"))
 
 #link = request.LAN("lan")
