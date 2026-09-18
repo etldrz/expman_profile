@@ -2,8 +2,8 @@
 
 echo "This is going to make a file" >> "$HOME/test.tx"
 
-curl https://mise.run | sh
-echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
-#git clone elixir repo
-#cd into
-#mise install
+sudo curl https://mise.run | sh
+sudo echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
+sudo git clone https://github.com/etldrz/caring.git /local/expman
+cd /local/expman
+sudo mise install
