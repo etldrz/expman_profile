@@ -2,6 +2,7 @@
 
 #echo "${USER}:${GROUP}" >> /local/here.txt
 #ls /users > /local/here.txt
+echo $SHELL > /local/here.text
 
 curl https://mise.run | sh
 #echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
