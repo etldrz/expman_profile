@@ -14,4 +14,4 @@ mise install
 mix local.hex --if-missing --force
 mix deps.get
 node_name=$(hostname | sed 's/\..*//')
-iex --sname "$node_name" --cookie salsa -S mix 
+#iex --sname "$node_name" --cookie salsa -S mix 
