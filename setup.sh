@@ -10,6 +10,7 @@ eval "$($HOME/.local/bin/mise activate bash)"
 git clone https://github.com/etldrz/caring.git /local/expman
 cd /local/expman
 sudo chown "$USER" .
+export SHELL=/bin/bash
 mise install
 mix local.hex --if-missing --force
 mix deps.get
