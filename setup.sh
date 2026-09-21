@@ -2,7 +2,7 @@
 
 #echo "${USER}:${GROUP}" >> /local/here.txt
 #ls /users > /local/here.txt
-echo $SHELL > /local/here.text
+#echo $SHELL > /local/here.text
 
 curl https://mise.run | sh
 #echo "eval \"\$($HOME/.local/bin/mise activate bash)\"" >> "$HOME/.bashrc"
@@ -14,4 +14,5 @@ mise install
 mix local.hex --if-missing --force
 mix deps.get
 node_name=$(hostname | sed 's/\..*//')
-#iex --sname "$node_name" --cookie salsa -S mix 
+node_addr=$(curl ifconfig.io)
+iex --name "$node_name@$node_addr" --cookie salsa -S mix 
