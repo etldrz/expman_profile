@@ -20,5 +20,4 @@ export RELEASE_DISTRIBUTION="name"
 export RELEASE_NODE=$(hostname | sed 's/\..*//')@$(curl ifconfig.io)
 export RELEASE_COOKIE="salsa"
 echo "node: $RELEASE_NODE, cookie: $RELEASE_COOKIE" > /local/here.txt
-_build/prod/rel/experiment_manager/bin/experiment_manager start
-#iex --name "$node_name@$node_addr" --cookie salsa -S mix 
+_build/prod/rel/experiment_manager/bin/experiment_manager daemon
