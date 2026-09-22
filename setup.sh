@@ -14,6 +14,9 @@ export SHELL=/bin/bash
 mise install
 mix local.hex --if-missing --force
 mix deps.get
-node_name=$(hostname | sed 's/\..*//')
-node_addr=$(curl ifconfig.io)
-iex --name "$node_name@$node_addr" --cookie salsa -S mix 
+MIX_ENV=prod mix release
+_build/prod/rel/experiment_manager/bin/experiment_manager start
+export RELEASE_DISTRIBUTION=$(hostname | sed 's/\..*//')
+
+export RELEASE_NODE=$(curl ifconfig.io)
+#iex --name "$node_name@$node_addr" --cookie salsa -S mix 
