@@ -19,5 +19,5 @@ MIX_ENV=prod mix release
 export RELEASE_DISTRIBUTION="name"
 export RELEASE_NODE=$(hostname | sed 's/\..*//')@$(curl ifconfig.io)
 export RELEASE_COOKIE="salsa"
-echo "node: $RELEASE_NODE, cookie: $RELEASE_COOKIE" > /local/here.txt
+echo "node: $RELEASE_NODE, cookie: $RELEASE_COOKIE" > /local/session.txt
 _build/prod/rel/experiment_manager/bin/experiment_manager daemon
